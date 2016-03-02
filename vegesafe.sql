@@ -21,8 +21,8 @@ CREATE TABLE council (
 );
 
 CREATE TABLE postcode_council (
-	postcodeID SERIAL REFERENCES postcode,
-	councilID SERIAL REFERENCES council
+	postcodeID NUMERIC REFERENCES postcode,
+	councilID NUMERIC REFERENCES council
 );
 
 CREATE TABLE address (
@@ -44,8 +44,8 @@ CREATE TABLE samplesite (
 );
 
 CREATE TABLE address_samplesite (
-	addressID SERIAL REFERENCES address,
-	samplesiteID SERIAL REFERENCES samplesite
+	addressID NUMERIC REFERENCES address,
+	samplesiteID NUMERIC REFERENCES samplesite
 );
 
 CREATE TABLE sample (
