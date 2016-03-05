@@ -8,3 +8,20 @@ CREATE TABLE
 CREATE TABLE
 CREATE TABLE
 CREATE TABLE
+CREATE TABLE
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+ userid | firstname | lastname |        email        
+--------+-----------+----------+---------------------
+      1 | Jane      | Doe      | janedoe@gmail.com
+      2 | John      | Smith    | johnsmith@gmail.com
+(2 rows)
+
