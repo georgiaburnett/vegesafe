@@ -19,7 +19,8 @@ CREATE TABLE address (
 	councilname VARCHAR(50),
 	primarymaterial TEXT,
 	paintedwall BOOLEAN,
-	propertyage NUMERIC(100)
+	propertyage NUMERIC(100),
+	dateofentry TIMESTAMP WITH TIME ZONE
 );
 
 CREATE TABLE person_address (
