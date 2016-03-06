@@ -9,29 +9,14 @@ CREATE TABLE person (
 	email VARCHAR(100)
 );
 
-CREATE TABLE postcode (
-	postcodeID SERIAL PRIMARY KEY,
-	postcode NUMERIC(4),
-	suburb VARCHAR(50)
-);
-
-CREATE TABLE council (
-	councilID SERIAL PRIMARY KEY,
-	councilname VARCHAR(50)
-);
-
-CREATE TABLE postcode_council (
-	postcodeID NUMERIC REFERENCES postcode,
-	councilID NUMERIC REFERENCES council
-);
-
 CREATE TABLE address (
 	addressID SERIAL PRIMARY KEY,
-	unitno NUMERIC(10),
-	streetno NUMERIC(10),
+	unitno VARCHAR(10),
+	streetno VARCHAR(10),
 	streetname VARCHAR(50),
-	postcodeID SERIAL REFERENCES postcode,
-	councilID SERIAL REFERENCES council,
+	postcode INTEGER,
+	suburb VARCHAR(50),
+	councilname VARCHAR(50),
 	primarymaterial TEXT,
 	paintedwall BOOLEAN,
 	propertyage NUMERIC(100)
@@ -44,15 +29,15 @@ CREATE TABLE samplesite (
 );
 
 CREATE TABLE address_samplesite (
-	addressID NUMERIC REFERENCES address,
-	samplesiteID NUMERIC REFERENCES samplesite
+	addressID INTEGER REFERENCES address,
+	samplesiteID INTEGER REFERENCES samplesite
 );
 
 CREATE TABLE sample (
 	sampleID SERIAL,
-	userID SERIAL REFERENCES person,
-	addressID SERIAL REFERENCES address,
-	samplesiteID SERIAL REFERENCES samplesite,
+	userID INTEGER REFERENCES person,
+	addressID INTEGER REFERENCES address,
+	samplesiteID INTEGER REFERENCES samplesite,
 	arseniccontent DECIMAL,
 	cadmiumcontent DECIMAL,
 	chromiumcontent DECIMAL,
