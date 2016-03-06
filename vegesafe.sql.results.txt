@@ -3,11 +3,6 @@ CREATE DATABASE
 CREATE TABLE
 CREATE TABLE
 CREATE TABLE
-INSERT 0 1
-INSERT 0 1
-INSERT 0 1
- userid | firstname | lastname |        email        
---------+-----------+----------+---------------------
-      1 | John      | Smith    | johnsmith@gmail.com
-(1 row)
-
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
