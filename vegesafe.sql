@@ -14,12 +14,17 @@ CREATE TABLE address (
 	unitno VARCHAR(10),
 	streetno VARCHAR(10),
 	streetname VARCHAR(50),
-	postcode INTEGER,
+	postcode NUMERIC(4),
 	suburb VARCHAR(50),
 	councilname VARCHAR(50),
 	primarymaterial TEXT,
 	paintedwall BOOLEAN,
 	propertyage NUMERIC(100)
+);
+
+CREATE TABLE person_address (
+	userID INTEGER REFERENCES person,
+	addressID INTEGER REFERENCES address
 );
 
 CREATE TABLE samplesite (
