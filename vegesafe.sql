@@ -4,38 +4,31 @@ CREATE DATABASE vegesafe;
 
 CREATE TABLE person (
 	userID SERIAL PRIMARY KEY,
-	firstname VARCHAR(50),
-	lastname VARCHAR(50),
-	email VARCHAR(100)
+	firstname VARCHAR(50) NOT NULL,
+	lastname VARCHAR(50) NOT NULL,
+	email VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE address (
 	addressID SERIAL PRIMARY KEY,
-	unitno VARCHAR(10),
-	streetno VARCHAR(10),
-	streetname VARCHAR(50),
-	postcode NUMERIC(4),
-	suburb VARCHAR(50),
-	councilname VARCHAR(50),
-	primarymaterial TEXT,
-	paintedwall BOOLEAN,
-	propertyage NUMERIC(100)
-);
-
-CREATE TABLE person_address (
 	userID INTEGER REFERENCES person,
-	addressID INTEGER REFERENCES address
+	unitno VARCHAR(10),
+	streetno VARCHAR(50),
+	streetname VARCHAR(50) NOT NULL,
+	postcode NUMERIC(4) NOT NULL,
+	suburb VARCHAR(50) NOT NULL,
+	councilname VARCHAR(50), 
+	primarymaterial TEXT, 
+	paintedwall BOOLEAN, 
+	propertyage NUMERIC(4), 
+	dateofentry TIMESTAMP WITH TIME ZONE
 );
 
 CREATE TABLE samplesite (
 	samplesiteID SERIAL PRIMARY KEY,
-	sitecode VARCHAR(1),
-	description TEXT
-);
-
-CREATE TABLE address_samplesite (
 	addressID INTEGER REFERENCES address,
-	samplesiteID INTEGER REFERENCES samplesite
+	sitecode VARCHAR(1) NOT NULL,
+	description TEXT
 );
 
 CREATE TABLE sample (
@@ -54,3 +47,4 @@ CREATE TABLE sample (
 	sampledate DATE,
 	PRIMARY KEY (sampleID, userID, addressID, samplesiteID)
 );
+
